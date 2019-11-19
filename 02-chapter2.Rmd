@@ -1,6 +1,6 @@
 # Chapter 2: Title here {#chapter2}
 
-```{r set.dir, echo=FALSE}
+```{r set.dir2, echo=FALSE, message=FALSE}
 library(knitr)
 library(tidyverse) 
 library(kableExtra) 
@@ -10,210 +10,37 @@ opts_chunk$set(echo = FALSE, out.width="5in", fig.align='center', fig.pos = "htb
 
 # Directory for figures and tables for this chapter.
 ## User needs to change this.
-illust_dir <- "path/to/figures/"
+illust_dir <- "example_figures"
 
 ```
-
-\newpage
-
-<!-- Below is example content to include if this chapter was previously published. -->
-<!-- You may comment (Ctrl + Shift + C) or delete it if unnecessary -->
-
-\singlespace
-\noindent
-The following chapter was published in a peer-reviewed journal and can be located using the reference: \
-
-\singlespace
-\noindent
-Jeffrey L. Neyhart, Tyler Tiede, Aaron J. Lorenz, and Kevin P. Smith. 2017. Evaluating Methods of Updating Training Data in Long-Term Genomewide Selection. G3: Genes|Genomes|Genetics, 7:1499-1510. doi: 10.1534/g3.117.040550. \ 
-\
-\
-Copyright \textcopyright \ 2017 Neyhart et al.
-\
-\
-Author contributions:  
-JLN conducted the simulations, collected/analyzed data, and wrote the manuscript and TT, AJL, and KPS provided edits. All authors conceived of the study and read and approved the final manuscript.
-
-
-<!-- End of example -->
-
-
-\doublespace
-
-\newpage
 
 
 ## Introduction
 
 <!-- Sample paragraph. -->
 
-The improvement of populations in plant breeding through recurrent selection may benefit tremendously from genomewide selection. Of particular worth are the high accuracies and shortened breeding cycles of genomewide selection, which allow for greater genetic gains per unit time [@Bernardo2007; @Heffner2009; @Lorenz2011]. While genomewide selection has already been employed in established breeding programs for major cultivated species [e.g. @Asoro2013; @Beyene2015; @Sallam2015], this tool also has broad appeal across other species. For instance, breeding programs for tree or perennial crops with long generation times could find utility in making selections before the plants are mature enough to phenotype. Additionally, orphan, undomesticated, or unimproved crops may benefit from rapid breeding progress. Indeed, researchers have already investigated the use of genomewide selection in species such as apple [*Malus x domestica*; @Kumar2012], Eucalyptus [@Resende2012], oil palm [*Elaeis guineensis* Jacq.; @Cros2015], and intermediate wheatgrass [*Thinopyrum intermedium* (Host) Barkworth & D.R. Dewey; @Zhang2016]. The population improvement necessary in newly established breeding programs, regardless of species, may be expedited through genomewide selection.
+This is another chapter. Use the same formatting from other chapters.
 
 
 ## Methods and Materials
-
-<!-- Example paragraph with an equation that is numbered so it can be referenced within the text. -->
-
-The marker data for the training population and selection candidates consisted of genotypes at all loci except the 100 QTL. This essentially simulated “genotyping” with complete accuracy. Monomorphic markers and those with a minor allele frequency less than 0.03 were removed prior to genomewide prediction. Marker effects were predicted using ridge-regression best linear unbiased prediction (RR-BLUP) according to the model
-\begin{equation}
-  \label{eq:I1}
-  \mathbf{y = 1\mu + Z_{TP} u + e},
-\end{equation}
-
-
-<!-- "\noindent" prevents indents when a new paragraph is made. -->
-
-\noindent
-where $\mathbf{y}$ was an *N* × 1 vector of the phenotypic means of N training population lines, 1 was a *N* × 1 vector of ones, $\mu$ was the grand mean, $\mathbf{Z_{TP}}$ was a *N* × *m* incidence matrix of training population genotypes for *m* markers, $\mathbf{u}$ was a *m* × 1 vector of marker effects, and $\mathbf{e}$ was a *N* × 1 vector of residuals. Elements of $\mathbf{Z_{TP}}$ were 1 if homozygous for the first allele, -1 if homozygous for the second allele, and 0 if heterozygous. Genotypic values of the F~3~ selection candidates were predicted using the equation $\mathbf{\hat{g} = Z_{SC}\hat{u}}$, where $\hat{g}$ was a 1,000 × 1 vector of predicted genotypic values, $Z_{SC}$ was a 1,000 × *m* incidence matrix of selection candidate genotypes, and $\hat{u}$ was a *m* × 1 vector of predicted marker effects. Elements of $Z_{SC}$ were the same as those in $Z_{TP}$.
-
-
-<!-- Example paragraph with refernce to a figure and an equation. -->
-
-Subsequent cycles of the simulation consisted of three steps: 1) crossing and population development, 2) prediction and selection, and 3) training population updating. These are outlined in the diagram presented in Fig. \ref{fig:fig12}. Parents selected in the previous cycle were randomly intermated to form a pool of selection candidates. Again, fifty crosses were simulated and 1,000 F~3~-derived selection candidates were generated. Prior to predictions, we removed monomorphic markers and those with a minor allele frequency less than 0.03 in both the pool of selection candidates and in the training population. Since markers could become monomorphic due to selection or drift, the number of markers used for prediction decreased over breeding cycles. We predicted marker effects by Eq. \ref{eq:I1}, using phenotypic and genotypic data on the training population. These marker effects were then used to predict genotypic values of the 1,000 selection candidates, and those with the top 100 predicted genotypic values were designated as parents for the next cycle. A subset of all selection candidates were then designated as new additions to the training population according to one of the updating methods described below. We simulated phenotypes for these additions and merged the phenotypic and genotypic data to the pool of training population data.
 
 
 ## Results
 
 
-
 ## Discussion
-
-
-
 
 
 ## Figures
 
-<!-- According to the formatting guidelines, figure captions can be single spaced. -->
-
-\singlespace
-
-<!-- Use "&nbsp;" to skip a line -->
-
-&nbsp;
-
-<!-- An example of including a figure. -->
-<!-- {r fig11} means the figure is given the name "fig11," which can be referenced in the text. -->
-<!-- fig.cap is the full-length caption -->
-<!-- fig.scap is the short version of the caption. This will appear in the list of figures/tables. -->
-
-```{r fig11, fig.cap="Figure caption", fig.scap="Short figure caption"}
-
-## include_graphics allows knitr to output a figure that is not generated by R.
-include_graphics(path = file.path(illust_dir, "Figure_1.jpg"), auto_pdf = TRUE)
-```
-
-
-\newpage
-
-
-
-```{r fig12, fig.cap="Figure caption", fig.scap="Short figure caption"}
-
-## include_graphics allows knitr to output a figure that is not generated by R.
-include_graphics(path = file.path(illust_dir, "Figure_2.jpg"), auto_pdf = TRUE)
-```
-
-
-
-
 
 ## Tables
-
-&nbsp;
-
-
-
-<!-- An example of including a figure. -->
-<!-- {r tab31} means the figure is given the name "tab31," which can be referenced in the text. -->
-<!-- Table captions (long and short) are arguments in kable -->
-
-```{r tab11}
-
-## Read in table
-# tab <- read_csv(file = file.path(illust_dir, "Table1.csv"))
-
-
-# Alternatively, use the mtcars table
-tab <- mtcars
-
-## Print table
-## align is a character vector of alignment designations. "l" for left, "c" for center, "r" for right.
-## booktabs creates a little overhang on the top and bottom lines of the table.
-## caption is the long caption
-## escape is used if you have special characters, like "*" that need to be escaped (using "//")
-## caption.short is the short caption.
-kable(x = tab, align = paste0(c("l", rep("c", ncol(tab) - 1))), booktabs = T, longtable = TRUE,
-      caption = "Table caption.", escape = FALSE, caption.short = "Short table caption.") %>%
-  kable_styling(font_size = 10) %>%
-  ## These adjust the width of some columns
-  column_spec(1, width = "8em") %>%
-  column_spec(3, width = "11em") %>%
-  column_spec(5, width = "9em") 
-  
-```
-
-
-
-
-
-
 
 
 ## Supplemental Figures
 
 
-
-&nbsp;
-
-
-<!-- An example of including a supplemental figure -->
-<!-- The rules are the same as for regular figures. -->
-
-```{r fig11S, fig.cap="Figure caption", fig.scap="Short figure caption"}
-
-## include_graphics allows knitr to output a figure that is not generated by R.
-include_graphics(path = file.path(illust_dir, "Figure_S1.jpg"), auto_pdf = TRUE)
-```
-
-
-
-
 ## Supplemental Tables
-
-&nbsp;
-
-<!-- An example of including a supplemental table -->
-<!-- The rules are the same as for regular tables -->
-
-
-```{r tab11S}
-
-## Read in table
-# tab <- read_csv(file = file.path(illust_dir, "Table1.csv"))
-
-
-# Alternatively, use the mtcars table
-tab <- mtcars
-
-## Print table
-## align is a character vector of alignment designations. "l" for left, "c" for center, "r" for right.
-## booktabs creates a little overhang on the top and bottom lines of the table.
-## caption is the long caption
-## escape is used if you have special characters, like "*" that need to be escaped (using "//")
-## caption.short is the short caption.
-kable(x = tab, align = paste0(c("l", rep("c", ncol(tab) - 1))), booktabs = T, longtable = TRUE,
-      caption = "Table caption.", escape = FALSE, caption.short = "Short table caption.") %>%
-  kable_styling(font_size = 10) %>%
-  ## These adjust the width of some columns
-  column_spec(1, width = "8em") %>%
-  column_spec(3, width = "11em") %>%
-  column_spec(5, width = "9em") 
-
-
-```
-
-
 
 
 
