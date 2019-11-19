@@ -125,17 +125,17 @@ include_graphics(path = file.path(figure_dir, "Figure_2.jpg"), auto_pdf = TRUE)
 
 
 <!-- An example of including a figure. -->
-<!-- {r tab31} means the figure is given the name "tab31," which can be referenced in the text. -->
+<!-- {r tab11} means the figure is given the name "tab11," which can be referenced in the text. -->
 <!-- Table captions (long and short) are arguments in kable -->
 
-```{r tab11}
+```{r tab11, message=FALSE}
 
 ## Read in table
-# tab <- read_csv(file = file.path(table_dir, "Table1.csv"))
+tab <- read_csv(file = file.path(table_dir, "Table1.csv"))
 
-
-# Alternatively, use the mtcars table
-tab <- mtcars
+# Edit column names
+# Normal equation notation can be used to create equations within tables
+colnames(tab) <- c("Trait", "$\\mu$", "$V_G$ (units$^2$)", "$\\mu_{sp}$", "$h^2$")
 
 ## Print table
 ## align is a character vector of alignment designations. "l" for left, "c" for center, "r" for right.
@@ -187,14 +187,16 @@ include_graphics(path = file.path(figure_dir, "Figure_S1.jpg"), auto_pdf = TRUE)
 <!-- The rules are the same as for regular tables -->
 
 
-```{r tab11S}
+```{r tab11S, message=FALSE}
 
 ## Read in table
-# tab <- read_csv(file = file.path(table_dir, "Table1.csv"))
+tab <- read_csv(file = file.path(table_dir, "Table1.csv"))
+
+# Edit column names
+# Normal equation notation can be used to create equations within tables
+colnames(tab) <- c("Trait", "$\\mu$", "$V_G$ (units$^2$)", "$\\mu_{sp}$", "$h^2$")
 
 
-# Alternatively, use the mtcars table
-tab <- mtcars
 
 ## Print table
 ## align is a character vector of alignment designations. "l" for left, "c" for center, "r" for right.

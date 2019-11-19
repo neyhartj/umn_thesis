@@ -21,7 +21,9 @@ install.packages(c("bookdown", "rmarkdown", "tidyverse", "knitr", "kableExtra"))
 
 ### Step 2. Install additional software for compiling LaTeX 
 
-The `umn_thesis` template compiles a book into a PDF. 
+The `umn_thesis` template compiles a book into a PDF. If you are using a Windows operating system, you will need to install a LaTeX compiler. [MiKTeX](https://miktex.org/download) is a good option.
+
+> Note: If using MiKTeX, you will need to allow it to install packages on-the-fly. To do this (after installing MiKTeX), open the MiKTeX Console, go to Settings, and select the "Always install missing packages on-the-fly" radio button. 
 
 
 
@@ -53,7 +55,7 @@ Instead of using Git, you can also simply download the `.zip` file containing th
 3. In RStudio, go to `File` > `New Project` > `Existing Directory` and navigate to the folder created after unzipping the ZIP file.
 
 
-### Step 2. Write!
+#### Project folder orientation
 
 After creating the project, you will have a directory with many different folders and files. Here is a breakdown of what each is for:
 
@@ -80,9 +82,27 @@ After creating the project, you will have a directory with many different folder
 You can ignore the `README.md` and `.gitignore` files.
 
 
+### Step 2. Write!
+
+Include the text, equations, figures, tables, or whatever you would like in the `chapter` RMarkdown files. The formatting of text, equations, citations, etc. is the same as any RMarkdown document. Below are some helpful resources for formatting text for RMarkdown:
+
++ [RMarkdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)  
++ [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)  
++ [RStudio Cheat Sheets](https://rstudio.com/resources/cheatsheets/)  
 
 
-Include the text, equations, figures, tables, or whatever you would like 
+
+### Step 3. Compile
+
+When you are ready to compile the thesis, run the following command:
+
+```
+rmarkdown::render_site()
+```
+
+or click the `Build Book` button under the `Build` tab in RStudio.
+
+The final thesis will be compiled into a PDF in the `_book` folder.
 
 
 
