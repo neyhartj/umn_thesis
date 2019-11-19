@@ -1,0 +1,9 @@
+# Epilogue: Epilogue title {-}
+
+<!-- This is an example rmarkdown file for an epilogue. It is a rmarkdown file, instead of the .txt files -->
+<!-- that contain the preface or abstract, because it is treated as a chapter for the purpose of the -->
+<!-- table of contents. -->
+
+
+
+
