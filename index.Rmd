@@ -9,13 +9,14 @@ advisor: "Adviser M LastName"
 site: bookdown::bookdown_site
 documentclass: book
 
-## Reference options
+## Bibliography settings
 # The bibliography is a .bib file that contains the bib entries for references. It is 
-## automatically produced by Mendeley.
-bibliography: C:/Users/jln54/GoogleDrive/Literature/MendeleyLibrary/library.bib
+# automatically produced by Mendeley. The user must change the line below.
+bibliography: example.bib
+
 # The bibliography style. I've included a template to format in the ACS style.
+# This line may remain unchanged.
 biblio-style: bibliographyStyle/trisocieties
-# biblio-style: "apa"
 
 
 ## Formatting
