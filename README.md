@@ -107,6 +107,11 @@ The final thesis will be compiled into a PDF in the `_book` folder.
 
 
 
+## Issues
+
+If you have comments or issues, please [file theme here](https://github.com/neyhartj/umn_thesis/issues/new).
+
+
 
 
 
